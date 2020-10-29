@@ -310,7 +310,7 @@ def expand_kHDZRadBreak(value):
         (?P<volume>[1-8])
         (?P<page>[0-9]{4})\.
         (?P<character>[0-3][0-9])
-        (?P<virtual>[01])
+        (?P<virtual>0)
     """,
         re.X,
     )
@@ -325,7 +325,7 @@ def expand_kHDZRadBreak(value):
 
     pattern = re.compile(
         r"""
-        (?P<radical>[{}]+)
+        (?P<radical>[{}])
         \[(?P<ucn>U\+2F[0-9A-D][0-9A-F])\]
     """.format(
             zhon.hanzi.radicals
