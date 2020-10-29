@@ -236,7 +236,7 @@ def expand_kIICore(value):
 
 
 def expand_kUnihanCore2020(value):
-    return {"sources": list(value)}
+    return list(value)
 
 
 def expand_kDaeJaweon(value):
