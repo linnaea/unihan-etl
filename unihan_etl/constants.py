@@ -34,6 +34,7 @@ UNIHAN_MANIFEST = {
         'kHKGlyph',
         'kPhonetic',
         'kTotalStrokes',
+        'kUnihanCore2020',
     ),
     'Unihan_IRGSources.txt': (
         'kCompatibilityVariant',
@@ -47,6 +48,8 @@ UNIHAN_MANIFEST = {
         'kIRG_TSource',
         'kIRG_USource',
         'kIRG_VSource',
+        'kIRG_SSource',
+        'kIRG_UKSource',
     ),
     'Unihan_NumericValues.txt': (
         'kAccountingNumeric',
@@ -106,6 +109,7 @@ UNIHAN_MANIFEST = {
         'kTang',
         'kVietnamese',
         'kXHC1983',
+        'kTGHZ2013',
     ),
     'Unihan_Variants.txt': (
         'kSemanticVariant',
@@ -113,6 +117,7 @@ UNIHAN_MANIFEST = {
         'kSpecializedSemanticVariant',
         'kTraditionalVariant',
         'kZVariant',
+        'kSpoofingVariant',
     ),
 }
 
@@ -130,10 +135,13 @@ CUSTOM_DELIMITED_FIELDS = (
     'kIRG_TSource',
     'kIRG_USource',
     'kIRG_VSource',
+    'kIRG_SSource',
+    'kIRG_UKSource',
+    'kUnihanCore2020',
 )
 
 #: Fields with multiple values UNIHAN delimits by spaces -> dict
-SPACE_DELIMITED_DICT_FIELDS = ('kHanYu', 'kXHC1983', 'kMandarin', 'kTotalStrokes')
+SPACE_DELIMITED_DICT_FIELDS = ('kHanYu', 'kXHC1983', 'kTGHZ2013', 'kMandarin', 'kTotalStrokes')
 
 #: Fields with multiple values UNIHAN delimits by spaces -> list
 SPACE_DELIMITED_LIST_FIELDS = (
@@ -201,6 +209,7 @@ SPACE_DELIMITED_LIST_FIELDS = (
     'kVietnamese',
     'kXerox',
     'kZVariant',
+    'kSpoofingVariant',
 )
 
 #: Any space delimited field regardless of expanded form

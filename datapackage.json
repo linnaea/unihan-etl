@@ -284,6 +284,13 @@
             "format": "default"
           },
           {
+            "name": "kUnihanCore2020",
+            "title": "",
+            "description": "",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "kIRGDaeJaweon",
             "title": "",
             "description": "",
@@ -369,6 +376,20 @@
           },
           {
             "name": "kIRG_VSource",
+            "title": "",
+            "description": "",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "kIRG_SSource",
+            "title": "",
+            "description": "",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "kIRG_UKSource",
             "title": "",
             "description": "",
             "type": "string",
@@ -648,6 +669,13 @@
             "format": "default"
           },
           {
+            "name": "kTGHZ2013",
+            "title": "",
+            "description": "",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "kXerox",
             "title": "",
             "description": "",
@@ -656,6 +684,13 @@
           },
           {
             "name": "kZVariant",
+            "title": "",
+            "description": "",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "kSpoofingVariant",
             "title": "",
             "description": "",
             "type": "string",

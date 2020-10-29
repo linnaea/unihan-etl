@@ -143,6 +143,28 @@ def expand_kXHC1983(value):
     return value
 
 
+def expand_kTGHZ2013(value):
+    pattern = re.compile(
+        r"""
+        (?P<page>[0-9]{3})\.
+        (?P<character>[0-9]{3})
+    """,
+        re.X,
+    )
+
+    for i, v in enumerate(value):
+        vals = v.split(':')
+        value[i] = {"locations": vals[0].split(','), "reading": vals[1]}
+
+        for n, loc in enumerate(value[i]['locations']):
+            m = pattern.match(loc).groupdict()
+            value[i]['locations'][n] = {
+                "page": int(m['page']),
+                "character": int(m['character']),
+            }
+    return value
+
+
 def expand_kCheungBauer(value):
     pattern = re.compile(
         r"""
@@ -211,6 +233,10 @@ def expand_kIICore(value):
     for i, v in enumerate(value):
         value[i] = {"priority": v[0], "sources": list(v[1:])}
     return value
+
+
+def expand_kUnihanCore2020(value):
+    return {"sources": list(value)}
 
 
 def expand_kDaeJaweon(value):
@@ -360,6 +386,8 @@ expand_kIRG_MSource = _expand_kIRG_GenericSource
 expand_kIRG_TSource = _expand_kIRG_GenericSource
 expand_kIRG_USource = _expand_kIRG_GenericSource
 expand_kIRG_VSource = _expand_kIRG_GenericSource
+expand_kIRG_SSource = _expand_kIRG_GenericSource
+expand_kIRG_UKSource = _expand_kIRG_GenericSource
 
 
 def expand_kGSR(value):
