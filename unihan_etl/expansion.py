@@ -371,6 +371,55 @@ expand_kRSKanWa = _expand_kRSGeneric
 expand_kRSKorean = _expand_kRSGeneric
 
 
+def expand_kSemanticVariant(value):
+    for i, v in enumerate(value):
+        ucn, ads, *_ = (v.split('<', maxsplit=1) + [''])
+        value[i] = {
+            "ucn": ucn,
+        }
+
+        if ads:
+            ads = ads.split(',')
+            for j, ad in enumerate(ads):
+                ad = ad.split(':', maxsplit=1) + ['']
+                ads[j] = {
+                    "source": ad[0],
+                    "same": 'T' in ad[1],
+                    "improper": 'B' in ad[1],
+                    "preferred": 'Z' in ad[1],
+                    "traditional": 'F' in ad[1],
+                    "simplified": 'J' in ad[1],
+                }
+            value[i]['sources'] = ads
+
+    return value
+
+
+expand_kSpecializedSemanticVariant = expand_kSemanticVariant
+
+
+def expand_kZVariant(value):
+    for i, v in enumerate(value):
+        ucn, ads, *_ = (v.split('<', maxsplit=1) + [''])
+        value[i] = {
+            "ucn": ucn,
+        }
+
+        if ads:
+            ads = ads.split(',')
+            for j, ad in enumerate(ads):
+                ad = ad.split(':', maxsplit=1) + ['']
+                ads[j] = {
+                    "source": ad[0],
+                    "same": 'T' in ad[1],
+                    "improper": 'B' in ad[1],
+                    "prefer-other": 'Z' in ad[1],
+                }
+            value[i]['sources'] = ads
+
+    return value
+
+
 def _expand_kIRG_GenericSource(value):
     v = value.split('-')
 
